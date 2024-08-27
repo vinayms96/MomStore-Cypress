@@ -1,5 +1,5 @@
 {
-  "name": "etsy-cypress",
+  "name": "momstore-cypress",
   "version": "1.0.0",
   "description": "Typescript, Cypress",
   "main": "index.js",
@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinayms96/Etsy-Cypress.git"
+    "url": "git+https://github.com/vinayms96/MomStore-Cypress.git"
   },
   "author": "Vinay M S",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vinayms96/Etsy-Cypress/issues"
+    "url": "https://github.com/vinayms96/MomStore-Cypress/issues"
   },
-  "homepage": "https://github.com/vinayms96/Etsy-Cypress#readme",
+  "homepage": "https://github.com/vinayms96/MomStore-Cypress#readme",
   "devDependencies": {
-    "cypress": "^13.6.1",
+    "cypress": "^13.14.0",
     "typescript": "^5.3.3"
   }
 }

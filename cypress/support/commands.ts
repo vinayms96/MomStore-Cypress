@@ -1,4 +1,7 @@
-/// <reference types="cypress" />
+import headerPage from "../pages/header.page";
+import loginPage from "../pages/login.page";
+
+export {};
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -25,13 +28,24 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+declare global {
+  namespace Cypress {
+    interface Chainable {
+        login: typeof login;
+    }
+  }
+}
+
+function login(username: string, password: string) {
+  cy.session([username, password], () => {
+      cy.visit('/');
+
+      headerPage.signInButton.click();
+      loginPage.emailField.clear().type(username);
+      loginPage.passwordField.clear().type(password);
+      loginPage.signInButton.click();
+  });
+  // cy.visit('/');
+}
+
+Cypress.Commands.add('login', login);
