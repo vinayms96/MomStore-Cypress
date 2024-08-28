@@ -31,21 +31,20 @@ export {};
 declare global {
   namespace Cypress {
     interface Chainable {
-        login: typeof login;
+      login: typeof login;
     }
   }
 }
 
 function login(username: string, password: string) {
   cy.session([username, password], () => {
-      cy.visit('/');
-
-      headerPage.signInButton.click();
-      loginPage.emailField.clear().type(username);
-      loginPage.passwordField.clear().type(password);
-      loginPage.signInButton.click();
+    cy.visit("/");
+    headerPage.signInButton.click();
+    loginPage.emailField.clear().type(username);
+    loginPage.passwordField.clear().type(password);
+    loginPage.signInButton.click();
   });
-  // cy.visit('/');
+  cy.visit('/');
 }
 
-Cypress.Commands.add('login', login);
+Cypress.Commands.add("login", login);
