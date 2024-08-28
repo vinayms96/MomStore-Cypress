@@ -9,7 +9,6 @@ describe('Verify Login Features', () => {
             cred = credentials.creds;
         });
     });
-    // cy.login(cred.username, cred.password);
     it('Validate fields visibility', () => {
         cy.visit('/');
         headerPage.signInButton.click();
