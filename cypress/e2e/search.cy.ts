@@ -12,14 +12,14 @@ describe('Search Functionality', () => {
     });
 
     it('Verify search text and Product count', () => {
-      cy.visit('/');
-      headerPage.searchBar.clear().type(`${searchText}{enter}`);
+        cy.visit('/');
+        headerPage.searchBar.clear().type(`${searchText}{enter}`);
 
-      // Search text
-      cy.url().should('contain', `/searchtap-search?q=${encodeURI(searchText.toLowerCase())}`);
-      searchPage.searchResultText.should('have.text', `"${searchText.toLowerCase()}"`);
+        // Search text
+        cy.url().should('contain', `/searchtap-search?q=${encodeURI(searchText.toLowerCase())}`);
+        searchPage.searchResultText.should('have.text', `"${searchText.toLowerCase()}"`);
 
-      // Product display count
-      searchPage.searchProductsList.should('have.length', 24);
+        // Product display count
+        searchPage.searchProductsList.should('have.length', 24);
   });
 });
