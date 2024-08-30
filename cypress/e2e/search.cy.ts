@@ -3,7 +3,7 @@ import searchPage from "../pages/search.page";
 
 describe('Search Functionality', () => {
     const searchText = 'Kids Dress';
-    it('Search for products', () => {
+    it('Search for products', { tags: ['regression'] }, () => {
         cy.visit('/');
         headerPage.searchBar.clear().type(`${searchText}{enter}`);
 
@@ -11,7 +11,7 @@ describe('Search Functionality', () => {
         searchPage.searchPageTitle.should('have.text', 'Search Results');
     });
 
-    it('Verify search text and Product count', () => {
+    it('Verify search text and Product count', { tags: ['regression'] }, () => {
         cy.visit('/');
         headerPage.searchBar.clear().type(`${searchText}{enter}`);
 
