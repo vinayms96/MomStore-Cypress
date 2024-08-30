@@ -13,11 +13,11 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
+// @ts-ignore
+import registerCypressGrep from '@cypress/grep'
 import "./commands";
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+registerCypressGrep();
 
 // Hide fetch/XHR requests
 const app = window.top;

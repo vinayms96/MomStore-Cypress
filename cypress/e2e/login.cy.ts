@@ -9,7 +9,7 @@ describe('Verify Login Features', () => {
             cred = credentials.creds;
         });
     });
-    it('Validate fields visibility', () => {
+    it('Validate fields visibility', { tags: ['regression'] }, () => {
         cy.visit('/');
         headerPage.signInButton.click();
 
@@ -18,7 +18,7 @@ describe('Verify Login Features', () => {
         loginPage.signInButton.should('be.visible');
     });
 
-    it('Validate fields enabled', () => {
+    it('Validate fields enabled', { tags: ['regression'] }, () => {
         cy.visit('/');
         headerPage.signInButton.click();
 
@@ -27,7 +27,7 @@ describe('Verify Login Features', () => {
         loginPage.signInButton.should('be.enabled');
     });
 
-    it('Validate invalid credentials', () => {
+    it('Validate invalid credentials', { tags: ['regression'] }, () => {
         cy.visit('/');
         headerPage.signInButton.click();
 
@@ -38,7 +38,7 @@ describe('Verify Login Features', () => {
         loginPage.invalidEmailPasswordErrorMsg.should('have.text', 'Incorrect email or password.');
     });
 
-    it('Validate valid credentials', () => {
+    it('Validate valid credentials', { tags: ['regression', 'smoke'] }, () => {
         cy.visit('/');
         headerPage.signInButton.click();
 

@@ -4,7 +4,7 @@ import listingPage from "../pages/listing.page";
 import productPage from "../pages/product.page";
 
 describe('Verify cart page', () => {
-    it('Validate product details', () => {
+    it('Validate product details', { tags: ['regression', 'smoke'] }, () => {
         cy.visit('/collections/kids-casual-wear');
 
         listingPage.listingPageProductLink(1).then((link) => {
