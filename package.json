@@ -19,7 +19,9 @@
   "homepage": "https://github.com/vinayms96/MomStore-Cypress#readme",
   "devDependencies": {
     "@cypress/grep": "^4.1.0",
+    "@types/pg": "^8.11.10",
     "cypress": "^13.14.0",
+    "pg": "^8.13.0",
     "typescript": "^5.3.3"
   }
 }
